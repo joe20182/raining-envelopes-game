@@ -4,8 +4,8 @@ class SceneStart extends Phaser.Scene {
     }
 
     preload(){
-    // this.load.image("redEnvelopes", "assets/images/red-envelopes.png");
-      this.load.image("redEnvelopes", "raining-envelopes-game/assets/images/red-envelopes.png");
+        this.load.image("redEnvelopes", "assets/images/red-envelopes.png");
+        // this.load.image("redEnvelopes", "raining-envelopes-game/assets/images/red-envelopes.png");
     }
 
     create() {
