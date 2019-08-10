@@ -1,6 +1,7 @@
 var gameSetting = {
     cdTime: 5,
-    maxEnveCount: 10
+    maxEnveCount: 10,
+    gamingTime: 10
 }
 
 var config = {

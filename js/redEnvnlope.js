@@ -14,7 +14,7 @@ class RedEnvelope extends Phaser.GameObjects.Image{
     update() {
         if (this.y > config.height) {
             this.destroy();
-            console.log('destroyed!');
+            // console.log('destroyed!');
         }
     }
 }

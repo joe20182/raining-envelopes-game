@@ -12,6 +12,15 @@ class SceneGaming extends Phaser.Scene {
         }
 
         this.input.on('gameobjectdown', this.gotcha, this);
+
+        // count down timer
+        this.gamingTime = gameSetting.gamingTime;
+        this.time.addEvent({
+            delay: 1000,
+            callback: this.countDownGaming,
+            callbackScope: this,
+            repeat: gameSetting.gamingTime
+        });
     }
 
     update() {
@@ -48,5 +57,20 @@ class SceneGaming extends Phaser.Scene {
             },
             callbackScope: this
         });
+    }
+
+    countDownGaming() {
+        if (this.gamingTime === 0) {
+            console.log('End Game.');
+            this.endTxt = this.add.text(config.width/2, config.height/2, 'Score: ' + this.totalScore, {
+                fontSize: '60px',
+                fill: 'green'
+            });
+            this.endTxt.setOrigin(.5, .5);
+            this.scene.pause();
+            // console.log(this);
+        }
+        // console.log(this.gamingTime);
+        this.gamingTime --;
     }
 }
